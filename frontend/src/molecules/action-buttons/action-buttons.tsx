@@ -1,13 +1,19 @@
 import React, { FC } from "react";
-import { AddExpenseButton } from "../../atoms/add-expense-button";
-import { AddIncomeButton } from "../../atoms/add-income-button";
+import { Button, ButtonVariant } from "../../atoms/button/button";
 import { ActionButtonsWrapper } from "./action-buttons-wrapper";
 
 export const ActionButtons: FC = () => {
+  const handleClick = (): void => {
+    console.log("hello world");
+  };
   return (
     <ActionButtonsWrapper>
-      <AddExpenseButton>-</AddExpenseButton>
-      <AddIncomeButton>+</AddIncomeButton>
+      <Button onClick={handleClick} round variant={ButtonVariant.PRIMARY}>
+        -
+      </Button>
+      <Button onClick={handleClick} round variant={ButtonVariant.PRIMARY}>
+        +
+      </Button>
     </ActionButtonsWrapper>
   );
 };
